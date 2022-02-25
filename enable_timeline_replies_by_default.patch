@@ -1,0 +1,17 @@
+Index: packages/backend/src/remote/activitypub/models/person.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/packages/backend/src/remote/activitypub/models/person.ts b/packages/backend/src/remote/activitypub/models/person.ts
+--- a/packages/backend/src/remote/activitypub/models/person.ts	(revision 42014997e42f95133108a962137ade6a71112c4e)
++++ b/packages/backend/src/remote/activitypub/models/person.ts	(revision 40d1e84b99603b9b030ed1cb789e18b154dbb888)
+@@ -164,7 +164,7 @@
+ 				tags,
+ 				isBot,
+ 				isCat: (person as any).isCat === true,
+-				showTimelineReplies: false,
++				showTimelineReplies: true,
+ 			})) as IRemoteUser;
+ 
+ 			await transactionalEntityManager.save(new UserProfile({
