@@ -1,0 +1,83 @@
+Index: packages/client/src/store.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/packages/client/src/store.ts b/packages/client/src/store.ts
+--- a/packages/client/src/store.ts	(revision 6e7e11e061deba94d3ff21b1391c10785b94f6e5)
++++ b/packages/client/src/store.ts	(date 1645813934734)
+@@ -68,17 +68,19 @@
+ 		where: 'deviceAccount',
+ 		default: [
+ 			'notifications',
++			'mentions',
+ 			'messaging',
+-			'drive',
+ 			'followRequests',
+ 			'-',
+-			'gallery',
+ 			'featured',
+ 			'explore',
+-			'announcements',
+-			'search',
++			'-',
++			'drive',
++			'pages',
++			'gallery',
++			'clips',
+ 			'-',
+-			'ui',
++			'search'
+ 		]
+ 	},
+ 	visibility: {
+@@ -152,11 +154,11 @@
+ 	},
+ 	useBlurEffectForModal: {
+ 		where: 'device',
+-		default: true
++		default: false
+ 	},
+ 	useBlurEffect: {
+ 		where: 'device',
+-		default: true
++		default: false
+ 	},
+ 	showFixedPostForm: {
+ 		where: 'device',
+@@ -180,7 +182,7 @@
+ 	},
+ 	instanceTicker: {
+ 		where: 'device',
+-		default: 'remote' as 'none' | 'remote' | 'always'
++		default: 'always' as 'none' | 'remote' | 'always'
+ 	},
+ 	reactionPickerSize: {
+ 		where: 'device',
+@@ -220,7 +222,7 @@
+ 	},
+ 	squareAvatars: {
+ 		where: 'device',
+-		default: false
++		default: true
+ 	},
+ 	postFormWithHashtags: {
+ 		where: 'device',
+@@ -254,13 +256,13 @@
+  */
+ export class ColdDeviceStorage {
+ 	public static default = {
+-		lightTheme: require('@/themes/l-light.json5') as Theme,
+-		darkTheme: require('@/themes/d-dark.json5') as Theme,
++		lightTheme: require('@/themes/l-gruvbox-light.json5') as Theme,
++		darkTheme: require('@/themes/d-gruvbox-dark.json5') as Theme,
+ 		syncDeviceDarkMode: true,
+ 		plugins: [] as Plugin[],
+ 		mediaVolume: 0.5,
+ 		sound_masterVolume: 0.3,
+-		sound_note: { type: 'syuilo/down', volume: 1 },
++		sound_note: { type: 'syuilo/down', volume: 0 },
+ 		sound_noteMy: { type: 'syuilo/up', volume: 1 },
+ 		sound_notification: { type: 'syuilo/pope2', volume: 1 },
+ 		sound_chat: { type: 'syuilo/pope1', volume: 1 },
+
